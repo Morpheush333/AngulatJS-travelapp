@@ -1,0 +1,9 @@
+<p>trip-list works!</p>
+{{trips[0].id}}
+<ul>
+    <li *ngFor="let trip of tripsResponse">
+        {{trip.id}}, {{trip.duration}}, {{trip.dateStart}}, {{trip.dateFinnish}}, {{trip.adultPrice}}
+    </li>
+</ul>
+
+
