@@ -1,4 +1,4 @@
 export class From {
-    cityFrom: City;
-    airportFrom: Airport;
+    // cityFrom: City;
+    // airportFrom: Airport;
 }

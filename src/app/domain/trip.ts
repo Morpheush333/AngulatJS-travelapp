@@ -1,13 +1,13 @@
 import { To } from './to';
-import { From } from './From';
+import { From } from './from';
 
 export class Trip {
     id: number;
     name: string;
     duration: number;
-    departureDate: string;
+    dateStart: string;
     //departureDate: Date;
-    returnDate: string;
+    dateFinnish: string;
     adultPrice: number;
     childPrice: number;
     probotion: Boolean;
@@ -16,12 +16,12 @@ export class Trip {
     // to: To;
     // from: From;
 
-    constructor(id: number, name: string, duration: number,
-         departureDate: string, returnDate: string) {
+    constructor(id?: number, name?: string, duration?: number,
+         dateStart?: string, dateFinnish?: string) {
              this.id=id;
              this.name=name;
              this.duration=duration;
-             this.departureDate=departureDate;
-             this.returnDate=returnDate;
+             this.dateStart=dateStart;
+             this.dateFinnish=dateFinnish;
     }
 }

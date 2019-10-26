@@ -1,0 +1,70 @@
+<div class="example-container">
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="dateStart"
+            [(ngModel)]="trip.dateStart" 
+            placeholder="Choose a date of your trip">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput [matDatepicker]="dateFinnish"
+            [(ngModel)]="trip.dateFinnish" 
+            placeholder="Choose a date of return">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+    <mat-form-field>
+        <input type="number" min="1" step="1" matInput
+        [(ngModel)]="trip.adultAvailable" 
+        placeholder="Enter number of available adult place" value="1">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input type="number" min="0" step="1" matInput 
+        [(ngModel)]="trip.kidAvailable" 
+        placeholder="Enter number of available child place" value="1">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input type="number" min="1" step="100" matInput 
+        [(ngModel)]="trip.adultPrice" 
+        placeholder="Adult price" value="1500">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input type="number" min="1" step="100" matInput 
+        [(ngModel)]="trip.kidPrice"
+        placeholder="Child price" value="1000">
+    </mat-form-field>
+
+    <button mat-button (Click)= "save()">Save!</button>
+
+    <!-- <mat-form-field>
+        <mat-select placeholder="Select">
+            <mat-option value="BB">bed & breakfast</mat-option>
+            <mat-option value="HB">half board</mat-option>
+            <mat-option value="FB">full board</mat-option>
+            <mat-option value="AI">all inclusive</mat-option>
+            <mat-option value="OV">overnight</mat-option>
+            <mat-option value="SC">self catering</mat-option>
+            <mat-option value="PP">program package</mat-option>
+        </mat-select>
+    </mat-form-field> -->
+</div>
+
+
+<!--  private LocalDate dateStart;
+    private LocalDate dateFinnish;
+//    private Integer totalDay;
+
+    @Enumerated(EnumType.STRING)
+    private Catering type;
+    private Double adultPrice;
+    private Double kidPrice;
+    private Boolean promotion;
+    private Integer adultAvailable;
+    private Integer kidAvailable; -->

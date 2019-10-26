@@ -1,9 +1,36 @@
 <p>trip-list works!</p>
-{{trips[0].id}}
+
+
 <ul>
-    <li *ngFor="let trip of tripsResponse">
+    <li *ngFor="let trip of trips">
         {{trip.id}}, {{trip.duration}}, {{trip.dateStart}}, {{trip.dateFinnish}}, {{trip.adultPrice}}
     </li>
 </ul>
+
+    <mat-table [dataSource]="trips" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef>Identifier</mat-header-cell>
+            <mat-cell *matCellDef="let trip">{{trip.id}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="dateStart">
+            <mat-header-cell *matHeaderCellDef>Departure Date</mat-header-cell>
+            <mat-cell *matCellDef="let trip">{{trip.dateStart}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="dateFinnish">
+            <mat-header-cell *matHeaderCellDef>Return Date</mat-header-cell>
+            <mat-cell *matCellDef="let trip">{{trip.dateFinnish}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="airportFrom">
+            <mat-header-cell *matHeaderCellDef>Departure Airport</mat-header-cell>
+            <mat-cell *matCellDef="let trip">
+                {{trip.from.cityFrom.name}} - {{trip.from.airportFrom.name}}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+
+
+
 
 
