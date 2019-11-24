@@ -46,7 +46,7 @@ export class TripCreateComponent implements OnInit {
     let label: string;  
     switch (catering){
       
-      case catering.BB: 
+      case Catering.BB: 
         label = 'Bed & Breakfest';
         break;
       

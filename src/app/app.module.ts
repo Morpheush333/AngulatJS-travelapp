@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TripListComponent } from './trip-list/trip-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MatTableModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatInputModule, MatDatepicker, MatDatepickerModule, MatNativeDateModule, MatMenuTrigger, MatToolbarModule, MatMenuModule} from '@angular/material';
+import {MatTableModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatInputModule, MatDatepicker, MatDatepickerModule, MatNativeDateModule, MatMenuTrigger, MatToolbarModule, MatMenuModule, MatCard, MatCardModule} from '@angular/material';
 import { TripCreateComponent } from './trip-create/trip-create.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -55,7 +55,8 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule
 
   
   ],
