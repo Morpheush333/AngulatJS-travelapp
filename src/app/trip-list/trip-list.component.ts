@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Trip } from '../domain/trip';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trip-list',
@@ -20,7 +21,7 @@ export class TripListComponent implements OnInit {
   //   this.http = http;
   //  }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
     // this.trips = [];
@@ -37,11 +38,11 @@ export class TripListComponent implements OnInit {
         console.log(response);
       });
 
-      
-
-
-
       console.log('LOL');
+  }
+
+  back() {
+    this.router.navigate(['']);
   }
 
 }

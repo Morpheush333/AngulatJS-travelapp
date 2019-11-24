@@ -1,16 +1,14 @@
 <div class="example-container">
 
     <mat-form-field>
-        <input matInput [matDatepicker]="dateStart"
-            [(ngModel)]="trip.dateStart" 
+        <input matInput [matDatepicker]="dateStart" [(ngModel)]="trip.dateStart"
             placeholder="Choose a date of your trip">
         <mat-datepicker-toggle matSuffix [for]="dateStart"></mat-datepicker-toggle>
         <mat-datepicker #dateStart></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field>
-        <input matInput [matDatepicker]="dateFinnish"
-            [(ngModel)]="trip.dateFinnish" 
+        <input matInput [matDatepicker]="dateFinnish" [(ngModel)]="trip.dateFinnish"
             placeholder="Choose a date of return">
         <mat-datepicker-toggle matSuffix [for]="dateFinnish"></mat-datepicker-toggle>
         <mat-datepicker #dateFinnish></mat-datepicker>
@@ -18,42 +16,32 @@
 
 
     <mat-form-field>
-        <input type="number" min="1" step="1" matInput
-        [(ngModel)]="trip.adultAvailable" 
-        placeholder="Enter number of available adult place" value="1">
+        <input type="number" min="1" step="1" matInput [(ngModel)]="trip.adultAvailable"
+            placeholder="Enter number of available adult place">
     </mat-form-field>
 
     <mat-form-field>
-        <input type="number" min="0" step="1" matInput 
-        [(ngModel)]="trip.kidAvailable" 
-        placeholder="Enter number of available child place" value="1">
+        <input type="number" min="0" step="1" matInput [(ngModel)]="trip.kidAvailable"
+            placeholder="Enter number of available child place">
     </mat-form-field>
 
     <mat-form-field>
-        <input type="number" min="1" step="100" matInput 
-        [(ngModel)]="trip.adultPrice" 
-        placeholder="Adult price" value="1500">
+        <input type="number" min="1" step="100" matInput [(ngModel)]="trip.adultPrice" placeholder="Adult price">
     </mat-form-field>
 
     <mat-form-field>
-        <input type="number" min="1" step="100" matInput 
-        [(ngModel)]="trip.kidPrice"
-        placeholder="Child price" value="1000">
+        <input type="number" min="1" step="100" matInput [(ngModel)]="trip.kidPrice" placeholder="Child price">
     </mat-form-field>
 
-    <button mat-button (click)= "save()">Save!</button>
-
-    <!-- <mat-form-field>
-        <mat-select placeholder="Select">
-            <mat-option value="BB">bed & breakfast</mat-option>
-            <mat-option value="HB">half board</mat-option>
-            <mat-option value="FB">full board</mat-option>
-            <mat-option value="AI">all inclusive</mat-option>
-            <mat-option value="OV">overnight</mat-option>
-            <mat-option value="SC">self catering</mat-option>
-            <mat-option value="PP">program package</mat-option>
+    <mat-form-field>
+        <mat-select placeholder="Select catering option" [(ngModel)]="trip.catering">
+            <mat-option *ngFor="let catering of caterings" value="{{catering}}">{{getCateringLabel(catering)}}</mat-option>
         </mat-select>
-    </mat-form-field> -->
+    </mat-form-field>
+
+    <button mat-button (click)="save()">Save!</button>
+
+    <button mat-button (click)="back()">Previous Page</button>
 </div>
 
 

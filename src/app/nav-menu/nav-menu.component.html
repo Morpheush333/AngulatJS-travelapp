@@ -1,0 +1,8 @@
+<mat-toolbar><button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink= "trips/create">Create new Trip</button>
+        <button mat-menu-item (click)= "goToTripList()">All Trips</button>
+    </mat-menu>
+</mat-toolbar>
+
+

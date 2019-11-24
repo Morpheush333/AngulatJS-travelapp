@@ -6,16 +6,39 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TripListComponent } from './trip-list/trip-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MatTableModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatInputModule, MatDatepicker, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
+import {MatTableModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatInputModule, MatDatepicker, MatDatepickerModule, MatNativeDateModule, MatMenuTrigger, MatToolbarModule, MatMenuModule} from '@angular/material';
 import { TripCreateComponent } from './trip-create/trip-create.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { Trip } from './domain/trip';
+import { HomePageComponent } from './home-page/home-page.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { TripListElementComponent } from './trip-list-element/trip-list-element.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: HomePageComponent
+  },
+  {
+    path: 'trips',
+    component: TripListComponent
+  },
+  {
+    path: 'trips/create',
+    component: TripCreateComponent
+  }
+]
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TripListComponent,
-    TripCreateComponent
+    TripCreateComponent,
+    HomePageComponent,
+    NavMenuComponent,
+    TripListElementComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +52,10 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes),
+    MatToolbarModule,
+    MatMenuModule
 
   
   ],

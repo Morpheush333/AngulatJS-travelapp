@@ -1,5 +1,6 @@
 import { To } from './to';
 import { From } from './from';
+import { Catering } from './catering.enum';
 
 export class Trip {
     id: number;
@@ -13,6 +14,7 @@ export class Trip {
     probotion: Boolean;
     adultAvailable: number;
     childAvilable: number;
+    catering: Catering;
     // to: To;
     // from: From;
 
